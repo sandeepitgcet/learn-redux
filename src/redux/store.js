@@ -1,5 +1,10 @@
-import { createStore } from "redux";
-import rootReducer from "./reducers/rootReducer";
+import { configureStore } from '@reduxjs/toolkit'
+import ValueSlice from './slice/ValueSlice'
 
-const store = createStore(rootReducer);
-export default store;
+const store = configureStore({
+  reducer: {
+    value : ValueSlice
+  }
+})
+
+export default store
